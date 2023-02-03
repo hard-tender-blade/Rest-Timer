@@ -39,6 +39,7 @@ export default function Home() {
     clearInterval(temptimer)
   }
 
+  //TODO: timer vole ten aby se nehybal 
   return (
     <div className=" flex justify-center items-center mt-60">
       <div className="h-32 w-64 flex flex-col justify-center items-center ">
