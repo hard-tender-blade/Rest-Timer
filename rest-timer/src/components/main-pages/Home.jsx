@@ -42,8 +42,8 @@ export default function Home() {
   return (
     <div className=" flex justify-center items-center mt-60">
       <div className="h-32 w-64 flex flex-col justify-center items-center ">
-        <div className=" text-text-b text-8xl"> {/*Text time Wrapper*/}
-          {Minutes}:{Seconds}
+        <div className="text-text-b text-8xl tracking-widest w-72"> {/*Text time Wrapper (require w-72)*/}
+          {ConvertToTimeView(Minutes, Seconds)}
         </div>
         <p className="text-sm font-inter font-bold text-gray-300 mt-8">REMAINING</p>
         <div>
@@ -53,4 +53,10 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+const ConvertToTimeView = (Minutes, Seconds) => {
+  if(Minutes < 10) Minutes = `0${Minutes}`
+  if(Seconds < 10) Seconds = `0${Seconds}`
+  return `${Minutes}:${Seconds}`
 }
