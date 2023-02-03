@@ -46,8 +46,8 @@ export default function Home() {
         <div>
           <button 
             className={`rounded-3xl drop-shadow-lg m-2 w-96 h-16 font-inter font-bold text-xl
-            text-${IsRunning ? 'white' : 'text-b'}
-            bg-${IsRunning ? 'dark-b' : 'light-b'}
+            ${IsRunning ? 'text-text-b' : 'text-white'}
+            ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
             `}
 
             onClick={StartStopBtnClickHandler}
