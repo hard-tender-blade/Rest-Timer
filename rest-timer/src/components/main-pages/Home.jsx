@@ -3,14 +3,14 @@ import React, { useState, useEffect }from "react";
 export default function Home() {
 
   //variables
-  const [StartTimer, setStartTimer] = useState(false)
+  const [IsRunning, setIsRunning] = useState(false)
   const [Seconds, setSeconds] = useState(0)
   const [Minutes, setMinutes] = useState(0)
 
   //timer tic function
   var temptimer;
   useEffect(() => {
-    if(StartTimer) {
+    if(IsRunning) {
       temptimer = setInterval(() => {
         setSeconds(Seconds+1)
   
@@ -22,21 +22,17 @@ export default function Home() {
   
       return () => clearInterval(temptimer)
     } 
-  }, [StartTimer, Seconds])
+  }, [IsRunning, Seconds])
 
-  //timer start from 00:00
-  const TimerStart = () => {
-    setStartTimer(true)
+  const StartStopBtnClickHandler = () => {
+    if(!IsRunning)
+      setIsRunning(true)
+    else {
+      setIsRunning(false)
+      clearInterval(temptimer)
+    }
     setSeconds(0)
     setMinutes(0)
-  } 
-
-  //timer stop to 00:00
-  const TimerStop = () => {
-    setStartTimer(false)
-    setSeconds(0)
-    setMinutes(0)
-    clearInterval(temptimer)
   }
 
   //TODO: timer vole ten aby se nehybal 
@@ -49,10 +45,14 @@ export default function Home() {
         <p className="text-sm font-inter font-bold text-gray-300 mt-8">REMAINING</p>
         <div>
           <button 
-            className={`rounded-3xl drop-shadow-lg m-2 w-96 h-16 bg-${StartTimer ? 'dark-b' : 'light-b'} font-inter font-bold text-${StartTimer ? 'white' : 'text-b'} text-xl`}
-            onClick={StartTimer ? TimerStop : TimerStart}
+            className={`rounded-3xl drop-shadow-lg m-2 w-96 h-16 font-inter font-bold text-xl
+            text-${IsRunning ? 'white' : 'text-b'}
+            bg-${IsRunning ? 'dark-b' : 'light-b'}
+            `}
+
+            onClick={StartStopBtnClickHandler}
             >
-            {StartTimer ? 'Stop' : 'Start'}
+            {IsRunning ? 'Stop' : 'Start'}
           </button>
         </div>
       </div>
