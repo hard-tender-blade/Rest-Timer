@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pages } from "../logic/Global";
+import { Pages } from "../../logic/Global";
 
 export default function NawBar(props) {
   const [currentPage, setCurrentPage] = useState(Pages.Home);

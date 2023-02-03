@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NawBar from "./components/NawBar";
+import NawBar from "./components/components/NawBar";
 import { Pages } from "./logic/Global";
 
 export default function App() {
