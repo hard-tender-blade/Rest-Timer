@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NawBar from "./components/components/NawBar";
+import NavBar from "./components/components/NavBar";
 import { Pages } from "./logic/Global";
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
 
   return (
         <div className="App h-screen">
-          <NawBar setCurrentPage={setCurrentPage}/>
+          <NavBar setCurrentPage={setCurrentPage}/>
           {CurrentPage}
         </div>
 )}

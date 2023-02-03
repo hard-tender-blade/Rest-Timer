@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Pages } from "../../logic/Global";
 
-export default function NawBar(props) {
+export default function NavBar(props) {
   const [currentPage, setCurrentPage] = useState(Pages.Home);
 
+  //TODO chage code here
   return (
     <div className="w-screen bg-white">
       <div className="max-w-7xl m-auto h-20 flex justify-around text-base text-grey-t font-intertight">
