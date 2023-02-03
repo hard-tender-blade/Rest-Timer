@@ -48,8 +48,12 @@ export default function Home() {
         </div>
         <p className="text-sm font-inter font-bold text-gray-300 mt-8">REMAINING</p>
         <div>
-          <button className="rounded-3xl drop-shadow-lg m-2 w-96 h-16 bg-dark-b font-inter font-bold text-white text-xl" onClick={TimerStop}>Stop</button>
-          <button className="rounded-3xl drop-shadow-lg m-2 w-96 h-16 bg-light-b font-inter font-bold text-text-b text-xl" onClick={TimerStart}>Start</button>
+          <button 
+            className={`rounded-3xl drop-shadow-lg m-2 w-96 h-16 bg-${StartTimer ? 'dark-b' : 'light-b'} font-inter font-bold text-${StartTimer ? 'white' : 'text-b'} text-xl`}
+            onClick={StartTimer ? TimerStop : TimerStart}
+            >
+            {StartTimer ? 'Stop' : 'Start'}
+          </button>
         </div>
       </div>
     </div>
