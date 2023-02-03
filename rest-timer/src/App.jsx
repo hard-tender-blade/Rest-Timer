@@ -2,6 +2,8 @@ import { useState } from "react";
 import NavBar from "./components/components/NavBar";
 import { Pages } from "./logic/Global";
 
+
+//last denis commit
 export default function App() {
   const [CurrentPage, setCurrentPage] = useState(Pages.Home)
 
