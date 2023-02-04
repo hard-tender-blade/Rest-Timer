@@ -124,18 +124,23 @@ export default function Home() {
         {/* start/stop timer button*/}
         <button 
           className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
-          ${IsRunning ? 'text-text-b' : 'text-white'}
+          ${IsRunning ? 'text-dark-b' : 'text-white'}
           ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
+          ${IsRunning ? 'hover:bg-indigo-100' : 'hover:bg-indigo-500'} 
+          transition-colors duration-300 ease-in-out}
           `}
           onClick={() => {TimerRunBtnClickHandler(IsRunning)}}>
           {IsRunning ? 'Stop' : "Start"}
         </button>
+
 
         {/* mode switch button  */}
         <button 
           className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
           ${IsRestTime ? 'text-orange-500' : 'text-lime-500'}
           ${IsRestTime  ? 'bg-orange-50' : 'bg-lime-50'}
+          ${IsRestTime  ? 'hover:bg-orange-100' : 'hover:bg-lime-100'}
+          transition-colors duration-300 ease-in-out
           `}
           onClick={SwitchTimerMode}
           >
