@@ -8,7 +8,7 @@ export default function App() {
 
   return (
         <div className="App h-screen">
-          <NavBar setCurrentPage={setCurrentPage}/>
+          <NavBar CurrentPage={CurrentPage} setCurrentPage={setCurrentPage}/>
           {CurrentPage}
         </div>
 )}
