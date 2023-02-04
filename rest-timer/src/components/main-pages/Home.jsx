@@ -111,25 +111,39 @@ export default function Home() {
   ////HTML SECTION////
   return (
     <div className=" flex justify-center items-center mt-60">
-      <div className="h-32 w-64 flex flex-col justify-center items-center ">
-        <div className={`text-8xl tracking-widest w-72
-        ${IsRestTime ? "text-green-500" : "text-text-b"}`}> {/*Text time Wrapper (require w-72)*/}
+      <div className=" w-64 flex flex-col justify-center items-center ">
+        {/* timer itself */}
+        <div className="text-8xl tracking-widest w-72"> {/*Text time Wrapper (require w-72)*/}
           {ConvertToTimeFormat(Minutes, Seconds)}
         </div>
 
+        {/* info text that shows current mode */}
         <p className="text-sm font-inter font-bold text-gray-700 mt-8">{IsRestTime ? "Rest-time" : "Work-time"}</p>
 
-        <div className="button-wrapper flex">
-          <button 
-            className={`rounded-3xl drop-shadow-lg m-2 w-96 h-16 font-inter font-bold text-xl
-            ${IsRunning ? 'text-text-b' : 'text-white'}
-            ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
-            `}
-            onClick={() => {TimerRunBtnClickHandler(IsRunning)}}>
-            {IsRunning ? 'Stop' : "Start"}
-          </button>
-          <button onClick={SwitchTimerMode}>Switch Mode</button>
-        </div>
+
+        {/* start/stop timer button*/}
+        <button 
+          className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
+          ${IsRunning ? 'text-text-b' : 'text-white'}
+          ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
+          `}
+          onClick={() => {TimerRunBtnClickHandler(IsRunning)}}>
+          {IsRunning ? 'Stop' : "Start"}
+        </button>
+
+        {/* mode switch button  */}
+        <button 
+          className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
+          ${IsRestTime ? 'text-orange-500' : 'text-lime-500'}
+          ${IsRestTime  ? 'bg-orange-50' : 'bg-lime-50'}
+          `}
+          onClick={SwitchTimerMode}
+          >
+          <abbr title={IsRestTime ? 'switch to work mode' : 'switch to rest mode'}>
+            {IsRestTime ? 'Work' : 'Rest'}
+          </abbr>
+        </button>
+
         
       </div>
     </div>

@@ -17,3 +17,8 @@
   --grey-t: #838598;
   --white: #FFFFFF;
 }
+
+abbr {
+  text-decoration: none;
+  border-bottom: 0;
+}
