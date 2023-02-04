@@ -11,7 +11,7 @@ export default function NavBar(props) {
         <div className="w-24 m-auto text-center">
 
           <button
-            className={currentPage === Pages.Home ? "font-inter font-medium text-text-b" : ""}
+            className={`${currentPage === Pages.Home ? "font-inter font-medium text-text-b" : ""} hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {
               props.setCurrentPage(Pages.Home);
               setCurrentPage(Pages.Home);
@@ -25,7 +25,7 @@ export default function NavBar(props) {
         <div className="w-24 m-auto text-center">
 
           <button
-            className={currentPage === Pages.Medals ? "font-inter font-medium text-text-b" : ""}
+            className={`${currentPage === Pages.Medals ? "font-inter font-medium text-text-b" : ""} hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {
               props.setCurrentPage(Pages.Medals);
               setCurrentPage(Pages.Medals);
@@ -38,7 +38,7 @@ export default function NavBar(props) {
         </div>
         <div className="w-24 m-auto text-center">
           <button
-            className={currentPage === Pages.HealthInfo ? "font-inter font-medium text-text-b" : ""}
+            className={`${currentPage === Pages.HealthInfo ? "font-inter font-medium text-text-b" : ""} hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {
               props.setCurrentPage(Pages.HealthInfo);
               setCurrentPage(Pages.HealthInfo);
@@ -51,7 +51,7 @@ export default function NavBar(props) {
         </div>
         <div className="w-24 m-auto text-center">
           <button
-            className={currentPage === Pages.Profile ? "font-inter font-medium text-text-b" : ""}
+            className={`${currentPage === Pages.Profile ? "font-inter font-medium text-text-b" : ""} hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {
               props.setCurrentPage(Pages.Profile);
               setCurrentPage(Pages.Profile);
@@ -66,7 +66,7 @@ export default function NavBar(props) {
 
           <div className="w-24 m-auto text-center">
           <button
-            className={currentPage === Pages.About ? "font-inter font-medium text-text-b" : ""}
+            className={`${currentPage === Pages.About ? "font-inter font-medium text-text-b" : ""} hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {
               props.setCurrentPage(Pages.About);
               setCurrentPage(Pages.About);

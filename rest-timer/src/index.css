@@ -8,10 +8,6 @@
   font-family: 'Inter Tight', sans-serif;
 }
 
-button:hover {
-  color: var(--text-b);
-}
-
 .root,
 #root,
 #docs-root {
