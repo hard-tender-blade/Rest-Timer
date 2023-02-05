@@ -1,4 +1,5 @@
 import React, { useState, useEffect }from "react";
+import StorageManager from "../../logic/LocalStorageManager";
 
 export default function Home() {
   ////TIMER SECTION////
@@ -19,23 +20,26 @@ export default function Home() {
     } 
   }, [IsRunning, Seconds])
 
-  //run every second
+  //run every second (event checker)
   const TimerOneSecTic = () => {
     //add ome sec
     setSeconds(Seconds+1)
-  
     //add min
     if(Seconds === 59) {
       setMinutes(Minutes+1)
       setSeconds(0)
     }
-
+    
+    ////Events////
     //time to stop work trigger 
-    if(!IsRestTime && Seconds === 20)
+    if(!IsRestTime && Minutes === StorageManager.GetUserWorkSessionTime())
       ShowNotification()
-
-    if(IsRestTime && Seconds === 10)
+    //time to stop rest trigger 
+    if(IsRestTime && Minutes === StorageManager.GetUserRestSessionTime()) {
       TimerStop()
+      StorageManager.AddOneRestSession()
+    }
+     
   }
 
   //run timer button click event
@@ -50,6 +54,20 @@ export default function Home() {
     setMinutes(0)
     setIsRunning(false)
     clearInterval(temptimer)
+
+    //Adding time to all time rest/work
+    if(IsRestTime)
+      StorageManager.AddRestTime(Minutes)
+    if(!IsRestTime)
+      StorageManager.AddWorkTime(Minutes)  
+      
+    //Correct sessions check
+    // from limit to  limit+10 is time zone for correct session  
+    if(!IsRestTime && Minutes >= StorageManager.GetUserWorkSessionTime() 
+    && Minutes <= StorageManager.GetUserWorkSessionTime() + 10)
+      StorageManager.AddOneWorkCorrectSession()
+    else if (Minutes > StorageManager.GetUserWorkSessionTime() + 10)
+      StorageManager.AddOneWorkInCorrectSession() 
   }
 
   //timer started
@@ -88,11 +106,11 @@ export default function Home() {
   //get user permission
   const CheckNotificationPermission = () => {
     //default, granted, denied
-    if(Notification.permission == "granted")
+    if(Notification.permission === "granted")
       return true
     else {
       Notification.requestPermission().then(permission => {
-        if(permission == "denied")
+        if(permission === "denied")
           alert(`It needs permission to send notifications for the program to work correctly.
           You can enable them in the upper left corner of the browser by clicking on the (I) icon.`)
       })
