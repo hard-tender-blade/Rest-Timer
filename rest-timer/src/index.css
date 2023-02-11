@@ -8,10 +8,6 @@
   font-family: 'Inter Tight', sans-serif;
 }
 
-button:hover {
-  color: var(--text-b);
-}
-
 .root,
 #root,
 #docs-root {
@@ -20,4 +16,9 @@ button:hover {
   --light-b: #E3EDFD;
   --grey-t: #838598;
   --white: #FFFFFF;
+}
+
+abbr {
+  text-decoration: none;
+  border-bottom: 0;
 }
