@@ -6,7 +6,7 @@ export default function NavBar(props) {
 
   //TODO chage code here
   return (
-    <div className="w-screen bg-white">
+    <div className="w-full bg-white">
       <div className="max-w-screen-2xl m-auto h-20 flex justify-around text-base text-grey-t font-intertight">
         <div className="w-24 m-auto text-center">
           <button
