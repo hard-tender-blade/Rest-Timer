@@ -128,20 +128,20 @@ export default function Home() {
 
   ////HTML SECTION////
   return (
-    <div className=" flex justify-center items-center mt-60">
-      <div className=" w-64 flex flex-col justify-center items-center ">
+    <div className=" flex justify-center items-center mt-48">
+      <div className="w-64 flex flex-col justify-center items-center ">
         {/* timer itself */}
         <div className="text-8xl tracking-widest w-72"> {/*Text time Wrapper (require w-72)*/}
           {ConvertToTimeFormat(Minutes, Seconds)}
         </div>
 
         {/* info text that shows current mode */}
-        <p className="text-sm font-inter font-bold text-gray-700 mt-8">{IsRestTime ? "Rest-time" : "Work-time"}</p>
+        <p className="text-sm font-inter font-bold text-gray-700">{IsRestTime ? "Rest-time" : "Work-time"}</p>
 
 
         {/* start/stop timer button*/}
         <button 
-          className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
+          className={`rounded-3xl drop-shadow-xl mt-10 m-2 w-96 h-16 font-inter font-bold text-xl
           ${IsRunning ? 'text-dark-b' : 'text-white'}
           ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
           ${IsRunning ? 'hover:bg-indigo-100' : 'hover:bg-indigo-500'} 
