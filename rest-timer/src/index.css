@@ -2,23 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@500;700&display=swap");
 
 * {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .root,
 #root,
 #docs-root {
-  --text-b: #060F1C;
-  --dark-b: #3F52E4;
-  --light-b: #E3EDFD;
+  --text-b: #060f1c;
+  --dark-b: #3f52e4;
+  --light-b: #e3edfd;
   --grey-t: #838598;
-  --white: #FFFFFF;
+  --white: #ffffff;
 }
 
 abbr {
   text-decoration: none;
   border-bottom: 0;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.dropping-menu {
+  max-height: 420px;
 }
