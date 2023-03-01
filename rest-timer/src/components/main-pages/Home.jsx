@@ -126,26 +126,33 @@ export default function Home() {
   }
   ////PICTURES SECTION////
 
+
+  ////HTML TITLE CHANGER////
+  useEffect(() => {
+    document.title = IsRestTime ? `Rest Timer | Resting - ${ConvertToTimeFormat(Minutes, Seconds)}` : `Rest Timer | Working - ${ConvertToTimeFormat(Minutes, Seconds)}`;
+  }, [IsRestTime, Minutes, Seconds]);
+  
   ////HTML SECTION////
   return (
-    <div className=" flex justify-center items-center mt-60">
-      <div className=" w-64 flex flex-col justify-center items-center ">
+    
+    <div className=" flex justify-center items-center mt-24">
+      <div className=" flex flex-col justify-center items-center ">
         {/* timer itself */}
-        <div className="text-8xl tracking-widest w-72"> {/*Text time Wrapper (require w-72)*/}
+        <div className="select-none text-9xl font-inter font-regular m-auto spec-w text-text-b">
           {ConvertToTimeFormat(Minutes, Seconds)}
         </div>
 
         {/* info text that shows current mode */}
-        <p className="text-sm font-inter font-bold text-gray-700 mt-8">{IsRestTime ? "Rest-time" : "Work-time"}</p>
+        <p className="text-l font-inter font-bold text-grey-t">{IsRestTime ? "Rest-time" : "Work-time"}</p>
 
 
         {/* start/stop timer button*/}
         <button 
-          className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
+          className={`rounded-3xl mt-10 m-2 w-96 h-16 font-inter font-bold text-xl z-10
           ${IsRunning ? 'text-dark-b' : 'text-white'}
           ${IsRunning ? 'bg-light-b' : 'bg-dark-b'}
-          ${IsRunning ? 'hover:bg-indigo-100' : 'hover:bg-indigo-500'} 
-          transition-colors duration-300 ease-in-out}
+          ${IsRunning ? 'hover:bg-indigo-100 hover:drop-shadow-2xl' : 'hover:bg-indigo-500 hover:drop-shadow-2xl'} 
+          transition duration-300 ease-in-out}
           `}
           onClick={() => {TimerRunBtnClickHandler(IsRunning)}}>
           {IsRunning ? 'Stop' : "Start"}
@@ -154,11 +161,11 @@ export default function Home() {
 
         {/* mode switch button  */}
         <button 
-          className={`rounded-3xl drop-shadow-xl m-2 w-96 h-16 font-inter font-bold text-xl
+          className={`rounded-3xl m-2 w-96 h-16 font-inter font-bold text-xl
           ${IsRestTime ? 'text-orange-500' : 'text-lime-500'}
           ${IsRestTime  ? 'bg-orange-50' : 'bg-lime-50'}
-          ${IsRestTime  ? 'hover:bg-orange-100' : 'hover:bg-lime-100'}
-          transition-colors duration-300 ease-in-out
+          ${IsRestTime  ? 'hover:bg-orange-100 hover:drop-shadow-2xl' : 'hover:bg-lime-100 hover:drop-shadow-2xl'}
+          transition duration-300 ease-in-out
           `}
           onClick={SwitchTimerMode}
           >
