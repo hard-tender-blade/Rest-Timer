@@ -18,10 +18,11 @@ export default function NavBar(props) {
   const NavBarBtn = (Page) => {
     return (
       <>
-        <div className="w-24 m-auto text-center">
+        <div className="w-36 h-12 m-6 text-center">
 
           <button
-            className={`${currentPage === Page ? "font-inter font-medium text-text-b" : "" } hover:text-dark-b transition-colors duration-200 ease-in-out`}
+            className={`${currentPage === Page ? "font-inter font-medium text-text-b" : "" }
+            whitespace-nowrap hover:text-dark-b transition-colors duration-200 ease-in-out`}
             onClick={() => {NavBarBtnClick(Page)}}>
             {Page == Pages.HealthInfo ? "Health info" : GetButtonName(Page)}
           </button>
@@ -37,10 +38,10 @@ export default function NavBar(props) {
     <div className="w-full bg-white">
       <div className="max-w-screen-2xl m-auto h-20 flex justify-around text-base text-grey-t font-intertight">
         {NavBarBtn(Pages.Home)}
-        {NavBarBtn(Pages.Medals)}
+        {/* {NavBarBtn(Pages.Medals)} */}
         {NavBarBtn(Pages.HealthInfo)}
         {NavBarBtn(Pages.Profile)}
-        <div className="w-64"></div>
+        <div className="w-full"></div>
         {NavBarBtn(Pages.About)}
       </div>
     </div>

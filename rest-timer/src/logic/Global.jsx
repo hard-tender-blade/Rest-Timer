@@ -8,7 +8,7 @@ import Profile from "../components/main-pages/Profile";
 
 export const Pages = {
     Home: <Home/>,
-    Medals: <Medals/>,
+    //Medals: <Medals/>,
     HealthInfo: <HealthInfo/>,
     Profile: <Profile/>,
     About: <About/>
