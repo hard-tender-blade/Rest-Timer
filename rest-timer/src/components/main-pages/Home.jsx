@@ -144,7 +144,7 @@ export default function Home(props) {
         </div>
 
         {/* info text that shows current mode */}
-        <p className="text-l font-inter font-bold text-grey-t">{IsRestTime ? "Rest-time" : "Work-time"}</p>
+        <p className="text-l font-inter font-bold text-grey-t">{IsRestTime ? "Rest-time 🌴" : "Work-time 💻"}</p>
 
 
         {/* start/stop timer button*/}
@@ -162,20 +162,12 @@ export default function Home(props) {
 
         {/* mode switch button  */}
         <button 
-          className={`rounded-3xl m-2 w-96 h-16 font-inter font-bold text-xl
-          ${IsRestTime ? 'text-orange-500' : 'text-lime-500'}
-          ${IsRestTime  ? 'bg-orange-50' : 'bg-lime-50'}
-          ${IsRestTime  ? 'hover:bg-orange-100 hover:drop-shadow-2xl' : 'hover:bg-lime-100 hover:drop-shadow-2xl'}
-          transition duration-300 ease-in-out
-          `}
+          className={`rounded-3xl m-2 w-96 h-16 font-inter font-bold text-xl text-dark-b bg-light-b hover:bg-indigo-100 hover:drop-shadow-2xl
+          transition duration-300 ease-in-out`}
           onClick={SwitchTimerMode}
           >
-          <abbr title={IsRestTime ? 'switch to work mode' : 'switch to rest mode'}>
-            {IsRestTime ? 'Work' : 'Rest'}
-          </abbr>
+            {IsRestTime ? 'Rest' : 'Work  '}
         </button>
-
-        
       </div>
     </div>
   );

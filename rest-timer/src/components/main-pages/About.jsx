@@ -4,7 +4,7 @@ import RestTimerLogo from "./../../resources/RestTimerLogo.png"
 export default function About() {
    return (
      <div className="About flex flex-col items-center justify-center ">
-        <div className="ProfilesWrapper flex w-5/6  h-96 mt-24">
+        <div className="ProfilesWrapper flex justify-center items-center w-5/6  h-96 mt-24">
 
             <div className="DenisWrapper  w-1/3 h-full">
               <a href="https://github.com/DenisMatsenko" target={"_blank"} className="flex justify-center items-center h-full w-full">
@@ -13,12 +13,7 @@ export default function About() {
               </a>
             </div>
 
-            <div className="RestTimerWrapper w-1/3 h-full flex justify-center items-center">
-              <a href="https://github.com/DenisMatsenko/Rest-Timer" className="w-full h-full flex justify-center items-center"  target={"_blank"}>
-                <img src={RestTimerLogo} alt="DenisPFP"
-                className="h-4/6 rounded-full"/>
-              </a>
-            </div>
+            <div className="RestTimerWrapper w-36 h-full flex justify-center items-center"></div>
 
             <div className="MatejWrapper w-1/3 h-full">
               <a href="https://github.com/mateyy11" target={"_blank"} className="w-full h-full flex justify-center items-center">
