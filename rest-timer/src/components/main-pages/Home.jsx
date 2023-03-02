@@ -138,7 +138,7 @@ export default function Home(props) {
   return (
     
     <div className={`${props.CurrentPage === Pages.Home ? "flex" : "hidden"} justify-center items-center mt-24`}>
-      <div className=" flex flex-col justify-center items-center ">
+      <div className="z-10 flex flex-col justify-center items-center">
         {/* timer itself */}
         <div className="select-none text-9xl font-inter font-regular m-auto spec-w text-text-b">
           {ConvertToTimeFormat(Minutes, Seconds)}
@@ -171,7 +171,7 @@ export default function Home(props) {
         </button>
       </div>
       <div class="fixed bottom-0 flex justify-center">
-        <img className="w-screen" src={orangeImage} alt="Orange" />
+        <img className="w-screen -z-10" src={orangeImage} alt="Orange" />
       </div> 
     </div>
     
