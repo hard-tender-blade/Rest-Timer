@@ -28,9 +28,13 @@ abbr {
 }
 
 .dropping-menu {
-  max-height: 420px;
+  max-height: 50vh;
 }
 
 .spec-w {
   width: 22.6rem;
+}
+
+.column-ww {
+  max-width: 270px;
 }

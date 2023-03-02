@@ -1,6 +1,7 @@
 import React, { useState, useEffect }from "react";
 import { Pages } from "../../logic/Global";
 import StorageManager from "../../logic/LocalStorageManager";
+import orangeImage from "./img/orange.png";
 
 export default function Home(props) {
   ////TIMER SECTION////
@@ -174,9 +175,12 @@ export default function Home(props) {
             {IsRestTime ? 'Work' : 'Rest'}
           </abbr>
         </button>
-
-        
       </div>
+      <div class="fixed bottom-0 flex justify-center">
+          <img className="w-screen" src={orangeImage} alt="Orange" />
+        </div> 
+
     </div>
+    
   );
 }
