@@ -1,7 +1,7 @@
 import React, { useState, useEffect }from "react";
 import { Pages } from "../../logic/Global";
 import StorageManager from "../../logic/LocalStorageManager";
-import orangeImage from "./img/orange.png";
+import orangeImage from "./../../resources/orange.png";
 
 export default function Home(props) {
   ////TIMER SECTION////

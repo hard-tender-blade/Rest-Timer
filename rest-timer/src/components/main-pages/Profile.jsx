@@ -1,6 +1,6 @@
 import React from "react";
 import StorageManager from "../../logic/LocalStorageManager";
-import Pfp from "./img/denis.png";
+import Pfp from "./../../resources/denis.png";
 
 export default function Profile() {
   return (
