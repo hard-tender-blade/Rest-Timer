@@ -1,7 +1,8 @@
 import React, { useState, useEffect }from "react";
+import { Pages } from "../../logic/Global";
 import StorageManager from "../../logic/LocalStorageManager";
 
-export default function Home() {
+export default function Home(props) {
   ////TIMER SECTION////
   //variables
   const [IsRunning, setIsRunning] = useState(false)
@@ -135,7 +136,7 @@ export default function Home() {
   ////HTML SECTION////
   return (
     
-    <div className=" flex justify-center items-center mt-24">
+    <div className={`${props.CurrentPage == Pages.Home ? "flex" : "hidden"} justify-center items-center mt-24`}>
       <div className=" flex flex-col justify-center items-center ">
         {/* timer itself */}
         <div className="select-none text-9xl font-inter font-regular m-auto spec-w text-text-b">

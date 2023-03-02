@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavBar from "./components/components/NavBar";
+import Home from "./components/main-pages/Home";
 import { Pages } from "./logic/Global";
 import StorageManager from "./logic/LocalStorageManager";
 
@@ -13,7 +14,8 @@ export default function App() {
   return (
         <div className="App h-screen">
           <NavBar CurrentPage={CurrentPage} setCurrentPage={setCurrentPage}/>
-          {CurrentPage}
+          <Home CurrentPage={CurrentPage}/>
+          {CurrentPage != Pages.Home ? CurrentPage : <></>}
         </div>
 )}
 
