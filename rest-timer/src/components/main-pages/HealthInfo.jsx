@@ -12,7 +12,7 @@ export default function HealthInfo() {
   const [showHandsWarmup, setShowHandsWarmup] = useState(false);
 
   return (
-    <div className="HealthInfo w-full relative">
+    <div className="HealthInfo w-full relative ">
       {/* separator */}
       <div className="h-10"></div>
 
@@ -35,7 +35,7 @@ export default function HealthInfo() {
         </p>
 
         {/* clickable dropdowns, gray divs in between for separation */}
-        <div className="dropping-menu overflow-scroll mt-10 overflow-x-hidden">
+        <div className="dropping-menu mt-10">
           {/* had to make it as separate scrollable window becase otherwise scrollbar would pop-up and move the entire window a bit to the left which looke really bad */}
           {/* separators look like this */}
           <div className="max-w-full h-px bg-gray-300"></div>
@@ -49,7 +49,7 @@ export default function HealthInfo() {
           </h3>
           {/* dropdown func for eyes */}
           {showEyes && (
-            <p className="font-inter text-lg mt-4 text-text-b">
+            <p className="font-inter text-lg mt-4 text-text-b transition duration-300">
               - Good vision greatly affects the comfort of a person's life. In
               order not to spoil it, you need to regularly do prevention.
             </p>
