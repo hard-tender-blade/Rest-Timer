@@ -34,10 +34,10 @@ export default function Home(props) {
     
     ////Events////
     //time to stop work trigger 
-    if(!IsRestTime && Minutes === StorageManager.GetUserWorkSessionTime())
+    if(!IsRestTime && Seconds === 3)
       ShowNotification()
     //time to stop rest trigger 
-    if(IsRestTime && Minutes === StorageManager.GetUserRestSessionTime()) {
+    if(IsRestTime && Seconds === 3) {
       TimerStop()
       StorageManager.AddOneRestSession()
     }
